@@ -3,6 +3,7 @@ package main
 import (
 	"brum-bot/internal/app/brum"
 	"flag"
+	"os"
 )
 
 // Variables used for command line parameters
@@ -12,7 +13,7 @@ var (
 
 func init() {
 
-	flag.StringVar(&Token, "t", "", "Bot Token")
+	flag.StringVar(&Token, "t", os.Getenv("DISCORD_KEY"), "Bot Token")
 	flag.Parse()
 }
 
