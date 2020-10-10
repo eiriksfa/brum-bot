@@ -3,6 +3,7 @@ package civ
 import (
 	"fmt"
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -48,24 +49,43 @@ var nations = []string{
 	"Gaul",
 	"Byzantium"}
 
+//Civ ...
 func Civ(msg string) string {
+	var cpp int = 1
+	var _ error
+
 	sMsg := strings.Split(msg, " ")
-	// If the message is "ping" reply with "Pong!"
-	sMsg = sMsg[2:]
+	var m interface{}
+	var n bool
+	m, _ = strconv.Atoi(sMsg[2])
+	m, n = m.(int)
+	if n {
+		cpp, _ = strconv.Atoi(sMsg[2])
+		sMsg = sMsg[3:]
+	} else {
+		sMsg = sMsg[2:]
+	}
 
 	rand.Seed(time.Now().Unix())
 
-	if len(sMsg) > len(nations) {
-		return "To many players!"
+	if (len(sMsg) * cpp) > len(nations) {
+		return "Too many players!"
 	}
 
 	result := "```"
 
-	for _, player := range sMsg {
-		ele := rand.Intn(len(nations))
-		nation := nations[ele]
-		nations = remove(nations, ele)
-		result += fmt.Sprintf("%s - %s\n", player, nation)
+	players := make(map[string]string)
+
+	for i := 0; i < cpp; i++ {
+		for _, player := range sMsg {
+			ele := rand.Intn(len(nations))
+			nation := nations[ele]
+			nations = remove(nations, ele)
+			players[player] += nation + "\n"
+		}
+	}
+	for key, value := range players {
+		fmt.Print(key, value)
 	}
 
 	result += "```"
