@@ -3,7 +3,6 @@ package civ
 import (
 	"fmt"
 	"math/rand"
-	"strings"
 	"time"
 )
 
@@ -48,20 +47,17 @@ var nations = []string{
 	"Gaul",
 	"Byzantium"}
 
-func Civ(msg string) string {
-	sMsg := strings.Split(msg, " ")
-	// If the message is "ping" reply with "Pong!"
-	sMsg = sMsg[2:]
+func Civ(players []string) string {
 
 	rand.Seed(time.Now().Unix())
 
-	if len(sMsg) > len(nations) {
+	if len(players) > len(nations) {
 		return "To many players!"
 	}
 
 	result := "```"
 
-	for _, player := range sMsg {
+	for _, player := range players {
 		ele := rand.Intn(len(nations))
 		nation := nations[ele]
 		nations = remove(nations, ele)

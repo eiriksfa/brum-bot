@@ -2,7 +2,6 @@ package main
 
 import (
 	"brum-bot/internal/app/brum"
-	"fmt"
 	"io/ioutil"
 	"os"
 )
@@ -15,5 +14,4 @@ func main() {
 	}
 
 	brum.Brum(token)
-	fmt.Print("Test123")
 }
