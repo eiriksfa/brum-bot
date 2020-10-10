@@ -2,21 +2,16 @@ package main
 
 import (
 	"brum-bot/internal/app/brum"
-	"flag"
+	"io/ioutil"
 	"os"
 )
 
-// Variables used for command line parameters
-var (
-	Token string
-)
-
-func init() {
-
-	flag.StringVar(&Token, "t", os.Getenv("DISCORD_KEY"), "Bot Token")
-	flag.Parse()
-}
-
 func main() {
-	brum.Brum(Token)
+	token := os.Getenv("DISCORD_KEY")
+	if token == "" {
+		dat, _ := ioutil.ReadFile("./.discord-key")
+		token = string(dat)
+	}
+
+	brum.Brum(token)
 }
