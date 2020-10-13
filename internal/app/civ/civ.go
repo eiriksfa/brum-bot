@@ -1,8 +1,8 @@
 package civ
 
 import (
-	"fmt"
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -48,26 +48,48 @@ var nations = []string{
 	"Gaul",
 	"Byzantium"}
 
+//Civ ...
 func Civ(msg string) string {
-	sMsg := strings.Split(msg, " ")
-	// If the message is "ping" reply with "Pong!"
-	sMsg = sMsg[2:]
-
+	var cpp int = 1
 	rand.Seed(time.Now().Unix())
 
-	if len(sMsg) > len(nations) {
-		return "To many players!"
+	sMsg := strings.Split(msg, " ")
+	_, err := strconv.Atoi(sMsg[2])
+	if err == nil {
+		cpp, _ = strconv.Atoi(sMsg[2])
+		sMsg = sMsg[3:]
+	} else {
+		sMsg = sMsg[2:]
+	}
+
+	if (len(sMsg) * cpp) > len(nations) {
+		return "Too many players!"
+	}
+
+	players := make([]string, len(sMsg), len(sMsg))
+	for i := 0; i < len(sMsg); i++ {
+		players[i] = sMsg[i] + "\t"
+	}
+
+	for i := 0; i < cpp; i++ {
+		for j := 0; j < len(players); j++ {
+			ele := rand.Intn(len(nations))
+			nation := nations[ele]
+			nations = remove(nations, ele)
+			players[j] += nation
+			if j < len(players) && i < (cpp-1) {
+				players[j] += " - "
+			}
+			if i == (cpp-1) && j < (len(players)-1) {
+				players[j] += "\n"
+			}
+		}
 	}
 
 	result := "```"
-
-	for _, player := range sMsg {
-		ele := rand.Intn(len(nations))
-		nation := nations[ele]
-		nations = remove(nations, ele)
-		result += fmt.Sprintf("%s - %s\n", player, nation)
+	for i := 0; i < len(sMsg); i++ {
+		result += players[i]
 	}
-
 	result += "```"
 
 	return result
