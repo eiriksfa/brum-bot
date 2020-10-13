@@ -129,14 +129,15 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 				},
 			},
 			{
-				Name:    "civ",
-				Aliases: []string{"c"},
-				Usage:   "civlization related commands",
+				Name:      "civ",
+				Aliases:   []string{"c"},
+				Usage:     "civlization related commands",
+				UsageText: "!brum (or !b) civ [global options] command [command options] [arguments...]",
 				Subcommands: []*cli.Command{
 					{
-						Name:    "nations",
+						Name:    "assign",
 						Usage:   "assigns each player a nation",
-						Aliases: []string{"n"},
+						Aliases: []string{"a"},
 						Flags: []cli.Flag{
 							&cli.StringFlag{
 								Name:    "count",
@@ -144,13 +145,35 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 								Aliases: []string{"c"},
 								Usage:   "number of nations for each player",
 							},
+							&cli.StringFlag{
+								Name:    "ranks",
+								Value:   "AB",
+								Aliases: []string{"r"},
+								Usage:   "Ranks to pull nations from",
+							},
 						},
 						Action: func(c *cli.Context) error {
 							count := c.Int("count")
 							if count > 1 {
 								return cli.Exit("Count > 1 is not implemented", 86)
 							}
-							s.ChannelMessageSend(m.ChannelID, civ.Civ(c.Args().Slice())) //
+							s.ChannelMessageSend(m.ChannelID, civ.Assign(c.Args().Slice(), c.String("ranks"))) //
+							return nil
+						},
+					},
+					{
+						Name:  "rankings",
+						Usage: "Print out a list of leader rankings",
+						Action: func(c *cli.Context) error {
+							s.ChannelMessageSend(m.ChannelID, civ.Rankings()) //
+							return nil
+						},
+					},
+					{
+						Name:  "leaders",
+						Usage: "Print out a list of leaders",
+						Action: func(c *cli.Context) error {
+							s.ChannelMessageSend(m.ChannelID, civ.Leaders(c.Args().Slice())) //
 							return nil
 						},
 					},

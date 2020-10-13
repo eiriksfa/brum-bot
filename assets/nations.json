@@ -1,0 +1,581 @@
+{
+  "rankings": [
+    {
+      "rating": "S",
+      "description": "Civ is consistently powerful.  Certain attributes are outstandingly effective.  Little to no weakness",
+      "victory": "Incredible bonuses, capable of winning under any condition"
+    },
+    {
+      "rating": "A",
+      "description": "Civ is consistently good.  Bonuses are always impactful, weaknesses aren't overly harmful.",
+      "victory": "Strong bonuses, high likelyhood of winning"
+    },
+    {
+      "rating": "B",
+      "description": "Civ is consistently decent.  No outstanding attributes, but no major weaknesses\t",
+      "victory": "Minor/inconsistent bonuses or incentives to focus.  Moderate likelihood of winning"
+    },
+    {
+      "rating": "C",
+      "description": "Civ is situationally decent or good.  Inconsistent bonuses and underwhelming attributes",
+      "victory": "No impactful bonuses.  Still capable of victory"
+    },
+    {
+      "rating": "D",
+      "description": "Civ is underpowered.  Bonuses are rarely effective or wholly underwhelming",
+      "victory": "Incentivised to avoid or penalized.  Low chance of victory (or reason to pursue it)"
+    },
+    {
+      "rating": "F",
+      "description": "Civ is always at a disadvantage.  Bonuses are near meaningless.",
+      "victory": "Incapable of victory"
+    }
+  ],
+  "leaders" : [
+    {
+      "name": "Cyrus",
+      "country": "Persia",
+      "overall": "S",
+      "domination": "S",
+      "Science": "C",
+      "Culture": "S",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Peter",
+      "country": "Russia",
+      "overall": "S",
+      "domination": "B",
+      "Science": "A",
+      "Culture": "S",
+      "Religion": "S",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Frederick",
+      "country": "Germany",
+      "overall": "S",
+      "domination": "A",
+      "Science": "S",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Kupe",
+      "country": "Māori",
+      "overall": "S",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "S",
+      "Religion": "S",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Seondeok",
+      "country": "Korea",
+      "overall": "S",
+      "domination": "B",
+      "Science": "S",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Simón Bolívar",
+      "country": "Gran Colombia",
+      "overall": "S",
+      "domination": "S",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "B",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Basil II",
+      "country": "Byzantine Empire",
+      "overall": "S",
+      "domination": "S",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "S",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Ambiorix",
+      "country": "Gallic Empire",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Saladin",
+      "country": "Arabia",
+      "overall": "A",
+      "domination": "B",
+      "Science": "S",
+      "Culture": "C",
+      "Religion": "S",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Amanitore",
+      "country": "Nubia",
+      "overall": "A",
+      "domination": "A",
+      "Science": "B",
+      "Culture": "B",
+      "Religion": "A",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Hojo Tokimune",
+      "country": "Japan",
+      "overall": "A",
+      "domination": "B",
+      "Science": "A",
+      "Culture": "A",
+      "Religion": "B",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Robert the Bruce",
+      "country": "Scotland",
+      "overall": "A",
+      "domination": "C",
+      "Science": "S",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Montezuma",
+      "country": "Aztec",
+      "overall": "A",
+      "domination": "S",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "D",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Gorgo",
+      "country": "Greece",
+      "overall": "A",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "B"
+    },
+    {
+      "name": "Pericles",
+      "country": "Greece",
+      "overall": "A",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "S",
+      "Religion": "B",
+      "Diplomacy": "A"
+    },
+
+
+    {
+      "name": "Pericles",
+      "country": "Greece",
+      "overall": "A",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "S",
+      "Religion": "B",
+      "Diplomacy": "A"
+    },
+    {
+      "name": "Shaka",
+      "country": "Zulu",
+      "overall": "A",
+      "domination": "S",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Suleiman",
+      "country": "Ottoman",
+      "overall": "A",
+      "domination": "S",
+      "Science": "A",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "John Curtin",
+      "country": "Australia",
+      "overall": "A",
+      "domination": "B",
+      "Science": "A",
+      "Culture": "B",
+      "Religion": "A",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Matthias",
+      "country": "Hungary",
+      "overall": "A",
+      "domination": "S",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "B"
+    },
+    {
+      "name": "Teddy Roosevelt (base game)",
+      "country": "USA",
+      "overall": "A",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "S",
+      "Religion": "C",
+      "Diplomacy": "S"
+    },
+    {
+      "name": "Pachacuti",
+      "country": "Inca",
+      "overall": "A",
+      "domination": "C",
+      "Science": "A",
+      "Culture": "C",
+      "Religion": "B",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Menelik II",
+      "country": "Ethipia",
+      "overall": "A",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "A",
+      "Religion": "A",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Teddy Roosevelt (Rough Rider)",
+      "country": "USA",
+      "overall": "A",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "S"
+    },
+
+    {
+      "name": "Trajan",
+      "country": "Rome",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "A",
+      "Religion": "B",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Wilhelmina",
+      "country": "Netherlands",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Genghis Khan",
+      "country": "Mongolia",
+      "overall": "B",
+      "domination": "A",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Gitarja",
+      "country": "Indonesia",
+      "overall": "B",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "A",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Poundmaker",
+      "country": "Cree",
+      "overall": "B",
+      "domination": "C",
+      "Science": "B",
+      "Culture": "B",
+      "Religion": "B",
+      "Diplomacy": "A"
+    },
+    {
+      "name": "Gilgamesh",
+      "country": "Sumeria",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "B"
+    },
+    {
+      "name": "Jadwiga",
+      "country": "Poland",
+      "overall": "B",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "B",
+      "Religion": "A",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Pedro",
+      "country": "Brazil",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "A",
+      "Religion": "B",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Tomyris",
+      "country": "Scythia",
+      "overall": "B",
+      "domination": "A",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "B",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Kristina",
+      "country": "Sweden",
+      "overall": "B",
+      "domination": "C",
+      "Science": "B",
+      "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "A"
+    },
+    {
+      "name": "Mansa Musa",
+      "country": "Mali",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "B",
+      "Religion": "S",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Qin Shi Quang",
+      "country": "China",
+      "overall": "B",
+      "domination": "C",
+      "Science": "B",
+      "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Alexander",
+      "country": "Macedonia",
+      "overall": "B",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Wilfrid Laurier",
+      "country": "Canada",
+      "overall": "B",
+      "domination": "D",
+      "Science": "C",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "S"
+    },
+    {
+      "name": "Lady Six Sky",
+      "country": "Maya",
+      "overall": "B",
+      "domination": "C",
+      "Science": "A",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Catherine de Medici (Magnificence)",
+      "country": "France",
+      "overall": "B",
+      "domination": "C",
+      "Science": "C",
+      "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Catherine de Medici (Black Queen)",
+      "country": "Maya",
+      "overall": "C",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+
+
+    {
+      "name": "Lautaro",
+      "country": "Mapuche",
+      "overall": "C",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Cleopatra",
+      "country": "Egypt",
+      "overall": "C",
+      "domination": "C",
+      "Science": "C",
+      "Culture": "B",
+      "Religion": "B",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Mvemba a Nzinga",
+      "country": "Kongo",
+      "overall": "C",
+      "domination": "C",
+      "Science": "C",
+      "Culture": "A",
+      "Religion": "F",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Victoria",
+      "country": "England",
+      "overall": "C",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Dido",
+      "country": "Phoenicia",
+      "overall": "C",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Eleanor of Aquitaine (France)",
+      "country": "France",
+      "overall": "C",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "B",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Eleanor of Aquitaine (England)",
+      "country": "England",
+      "overall": "D",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Chandragupta",
+      "country": "India",
+      "overall": "D",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "A",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Jayavarman",
+      "country": "Khmer",
+      "overall": "D",
+      "domination": "C",
+      "Science": "C",
+      "Culture": "B",
+      "Religion": "B",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Gandhi",
+      "country": "India",
+      "overall": "D",
+      "domination": "D",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "A",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Harald",
+      "country": "Norway",
+      "overall": "F",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Tamar",
+      "country": "Georgia",
+      "overall": "F",
+      "domination": "C",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "B",
+      "Diplomacy": "A"
+    },
+    {
+      "name": "Phillip",
+      "country": "Spain",
+      "overall": "F",
+      "domination": "B",
+      "Science": "C",
+      "Culture": "C",
+      "Religion": "B",
+      "Diplomacy": "D"
+    }
+  ]
+}
