@@ -154,10 +154,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 						},
 						Action: func(c *cli.Context) error {
 							count := c.Int("count")
-							if count > 1 {
-								return cli.Exit("Count > 1 is not implemented", 86)
-							}
-							s.ChannelMessageSend(m.ChannelID, civ.Assign(c.Args().Slice(), c.String("ranks"))) //
+							s.ChannelMessageSend(m.ChannelID, civ.Assign(c.Args().Slice(), c.String("ranks"), count)) //
 							return nil
 						},
 					},

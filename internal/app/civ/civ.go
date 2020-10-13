@@ -2,10 +2,8 @@ package civ
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"math/rand"
-	"strconv"
 	"strings"
 	"time"
 )
