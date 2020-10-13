@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -103,7 +104,7 @@ func Leaders(r []string) string {
 	return result + "```"
 }
 
-func Assign(players []string, ranks string) string {
+func Assign(players []string, ranks string, cpp int) string {
 
 	rand.Seed(time.Now().Unix())
 
@@ -115,19 +116,34 @@ func Assign(players []string, ranks string) string {
 
 	leaders := FilterLeaders(nationList.Leaders, rankings)
 
-	if len(players) > len(leaders) {
+	if (len(players) * cpp) > len(leaders) {
 		return "To many players!"
 	}
 
-	result := "```"
-
-	for _, player := range players {
-		ele := rand.Intn(len(leaders))
-		nation := leaders[ele]
-		leaders = remove(leaders, ele)
-		result += fmt.Sprintf("%s - %s\n", player, nation.Name)
+	assigned := make([]string, len(players), len(players))
+	for i := 0; i < len(players); i++ {
+		assigned[i] = players[i] + "\t"
 	}
 
+	for i := 0; i < cpp; i++ {
+		for j := 0; j < len(assigned); j++ {
+			ele := rand.Intn(len(leaders))
+			nation := leaders[ele]
+			leaders = remove(leaders, ele)
+			assigned[j] += nation.Name
+			if j < len(assigned) && i < (cpp-1) {
+				assigned[j] += " - "
+			}
+			if i == (cpp-1) && j < (len(assigned)-1) {
+				assigned[j] += "\n"
+			}
+		}
+	}
+
+	result := "```"
+	for i := 0; i < len(players); i++ {
+		result += assigned[i]
+	}
 	result += "```"
 
 	return result
