@@ -1,6 +1,11 @@
 {
   "rankings": [
     {
+      "rating": "O",
+      "description": "Overpowered",
+      "victory": "OP"
+    },
+    {
       "rating": "S",
       "description": "Civ is consistently powerful.  Certain attributes are outstandingly effective.  Little to no weakness",
       "victory": "Incredible bonuses, capable of winning under any condition"
@@ -45,12 +50,22 @@
     {
       "name": "Peter",
       "country": "Russia",
-      "overall": "S",
+      "overall": "O",
       "domination": "B",
       "Science": "A",
       "Culture": "S",
       "Religion": "S",
       "Diplomacy": "C"
+    },
+    {
+      "name": "Hammurabi",
+      "country": "Babylon",
+      "overall": "O",
+      "domination": "S",
+      "Science": "A",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
     },
     {
       "name": "Frederick",
@@ -65,7 +80,7 @@
     {
       "name": "Kupe",
       "country": "Māori",
-      "overall": "S",
+      "overall": "O",
       "domination": "B",
       "Science": "C",
       "Culture": "S",
@@ -75,7 +90,7 @@
     {
       "name": "Seondeok",
       "country": "Korea",
-      "overall": "S",
+      "overall": "O",
       "domination": "B",
       "Science": "S",
       "Culture": "B",
@@ -103,6 +118,16 @@
       "Diplomacy": "C"
     },
     {
+      "name": "Teddy Roosevelt (Bull moose)",
+      "country": "USA",
+      "overall": "S",
+      "domination": "C",
+      "Science": "B",
+      "Culture": "S",
+      "Religion": "C",
+      "Diplomacy": "A"
+    },
+    {
       "name": "Ambiorix",
       "country": "Gallic Empire",
       "overall": "B",
@@ -120,6 +145,16 @@
       "Science": "S",
       "Culture": "C",
       "Religion": "S",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Bà Triệu",
+      "country": "Vietnam",
+      "overall": "A",
+      "domination": "A",
+      "Science": "B",
+      "Culture": "A",
+      "Religion": "C",
       "Diplomacy": "C"
     },
     {
@@ -235,16 +270,6 @@
       "Diplomacy": "B"
     },
     {
-      "name": "Teddy Roosevelt (base game)",
-      "country": "USA",
-      "overall": "A",
-      "domination": "B",
-      "Science": "C",
-      "Culture": "S",
-      "Religion": "C",
-      "Diplomacy": "S"
-    },
-    {
       "name": "Pachacuti",
       "country": "Inca",
       "overall": "A",
@@ -292,6 +317,26 @@
       "domination": "B",
       "Science": "B",
       "Culture": "A",
+      "Religion": "C",
+      "Diplomacy": "C"
+    },
+    {
+      "name": "Kublai Khan",
+      "country": "Mongolia",
+      "overall": "C",
+      "domination": "B",
+      "Science": "B",
+      "Culture": "C",
+      "Religion": "C",
+      "Diplomacy": "D"
+    },
+    {
+      "name": "Kublai Khan",
+      "country": "China",
+      "overall": "B",
+      "domination": "C",
+      "Science": "B",
+      "Culture": "B",
       "Religion": "C",
       "Diplomacy": "C"
     },
