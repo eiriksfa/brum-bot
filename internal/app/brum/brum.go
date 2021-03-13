@@ -1,15 +1,41 @@
 package brum
 
 import (
+	"brum-bot/internal/app/civ"
+	"bytes"
 	"fmt"
+	"io"
+	"log"
 	"os"
 	"os/signal"
 	"strings"
 	"syscall"
+	"text/tabwriter"
+	"text/template"
 
-	"brum-bot/internal/app/civ"
 	"github.com/bwmarrin/discordgo"
+	"github.com/urfave/cli/v2"
 )
+
+type customWriter struct {
+	s *discordgo.Session
+	m *discordgo.MessageCreate
+	w bytes.Buffer
+}
+
+func (e customWriter) Write(p []byte) (int, error) {
+	n, err := e.w.Write(p)
+	outStr := "```" + e.w.String() + "```"
+	e.s.ChannelMessageSend(e.m.ChannelID, outStr)
+
+	if err != nil {
+		return n, err
+	}
+	if n != len(p) {
+		return n, io.ErrShortWrite
+	}
+	return len(p), nil
+}
 
 func Brum(Token string) {
 
@@ -54,8 +80,108 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	msg := strings.Split(m.Content, " ")
-	// If the message is "ping" reply with "Pong!"
-	if msg[0] == "!brum" && msg[1] == "civ" {
-		s.ChannelMessageSend(m.ChannelID, civ.Civ(m.Content))
+
+	if msg[0] != "!brum" && msg[0] != "!b" {
+		return
 	}
+
+	cli.HelpPrinter = func(w io.Writer, templ string, data interface{}) {
+		funcMap := template.FuncMap{
+			"join": strings.Join,
+		}
+		t := template.Must(template.New("help").Funcs(funcMap).Parse(templ))
+
+		buf := new(bytes.Buffer)
+		out := tabwriter.NewWriter(buf, 1, 8, 2, ' ', 0)
+		t.Execute(out, data)
+
+		outStr := "```" + buf.String() + "```"
+		s.ChannelMessageSend(m.ChannelID, outStr)
+	}
+
+	cli.OsExiter = func(code int) {
+
+	}
+
+	w := &customWriter{s: s, m: m, w: bytes.Buffer{}}
+	cli.ErrWriter = w
+
+	app := &cli.App{
+		Name:      "BrumBot",
+		HelpName:  "contrive",
+		Usage:     "bils discord bot",
+		UsageText: "!brum (or !b) [global options] command [command options] [arguments...]",
+		Commands: []*cli.Command{
+			{
+				Name:  "pong",
+				Usage: "sends ping",
+				Action: func(c *cli.Context) error {
+					s.ChannelMessageSend(m.ChannelID, "ping")
+					return nil
+				},
+			},
+			{
+				Name:  "ping",
+				Usage: "sends pong",
+				Action: func(c *cli.Context) error {
+					s.ChannelMessageSend(m.ChannelID, "pong")
+					return nil
+				},
+			},
+			{
+				Name:      "civ",
+				Aliases:   []string{"c"},
+				Usage:     "civlization related commands",
+				UsageText: "!brum (or !b) civ [global options] command [command options] [arguments...]",
+				Subcommands: []*cli.Command{
+					{
+						Name:    "assign",
+						Usage:   "assigns each player a nation",
+						Aliases: []string{"a"},
+						Flags: []cli.Flag{
+							&cli.StringFlag{
+								Name:    "count",
+								Value:   "1",
+								Aliases: []string{"c"},
+								Usage:   "number of nations for each player",
+							},
+							&cli.StringFlag{
+								Name:    "ranks",
+								Value:   "AB",
+								Aliases: []string{"r"},
+								Usage:   "Ranks to pull nations from",
+							},
+						},
+						Action: func(c *cli.Context) error {
+							count := c.Int("count")
+							s.ChannelMessageSend(m.ChannelID, civ.Assign(c.Args().Slice(), c.String("ranks"), count)) //
+							return nil
+						},
+					},
+					{
+						Name:  "rankings",
+						Usage: "Print out a list of leader rankings",
+						Action: func(c *cli.Context) error {
+							s.ChannelMessageSend(m.ChannelID, civ.Rankings()) //
+							return nil
+						},
+					},
+					{
+						Name:  "leaders",
+						Usage: "Print out a list of leaders",
+						Action: func(c *cli.Context) error {
+							s.ChannelMessageSend(m.ChannelID, civ.Leaders(c.Args().Slice())) //
+							return nil
+						},
+					},
+				},
+			},
+		},
+	}
+
+	err := app.Run(msg)
+	if err != nil {
+		log.Println(err)
+	}
+
 }
